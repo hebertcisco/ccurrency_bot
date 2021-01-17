@@ -9,7 +9,7 @@ export default async (req: NowRequest, res: NowResponse) => {
     query: { base },
   } = req;
   const response_conversion_rates = await fetch(
-    `http://localhost:3000/api/v1/latest/hoje?base=${base}`
+    `https://ccurrencybot.now.sh/api/v1/latest/hoje?base=${base}`
   );
   const conversion_rates: IConversionRates = await response_conversion_rates.json();
   const brl = conversion_rates.BRL;
